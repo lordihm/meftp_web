@@ -36,11 +36,11 @@ INSTALLED_APPS = [
     'djangocms_file',
     'djangocms_picture',
     'djangocms_video',
-#    'djangocms_bootstrap5',
+    'djangocms_bootstrap5',
     'djangocms_frontend',
     
     # SEO
-#    'meta',
+    'meta',
     
     # Sekizai (requis par CMS)
     'sekizai',
@@ -125,6 +125,23 @@ TIME_ZONE = 'Europe/Paris'
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
+
+# Pour djangocms-link 4.0.0
+DJANGOCMS_LINK_TEMPLATES = [
+    ('default', 'Par défaut'),
+]
+
+DJANGOCMS_LINK_ALLOWED_LINK_TYPES = [
+    'internal_link',  # Pages et autres modèles
+    'external_link',  # URLs
+    'file_link',      # Fichiers
+    'tel',            # Téléphone
+    'mailto',         # Email
+]
+
+# Pour django-filer
+FILER_CANONICAL_URL = 'media/'
+THUMBNAIL_HIGH_RESOLUTION = True
 
 # Sites framework
 SITE_ID = 1
