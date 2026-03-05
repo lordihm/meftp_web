@@ -1,0 +1,41 @@
+{% load cms_tags sekizai_tags static bootstrap5 %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% page_attribute "page_title" %} - MEFTP</title>
+    
+    <!-- Bootstrap 5 CSS via django-bootstrap5 -->
+    {% bootstrap_css %}
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    {% render_block "css" %}
+</head>
+<body>
+    {% cms_toolbar %}
+    
+    <!-- Navigation (identique) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <!-- ... contenu identique ... -->
+    </nav>
+    
+    <!-- Contenu principal -->
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    
+    <!-- Footer (identique) -->
+    <footer class="footer">
+        <!-- ... contenu identique ... -->
+    </footer>
+    
+    <!-- Bootstrap 5 JS -->
+    {% bootstrap_javascript %}
+    
+    {% render_block "js" %}
+</body>
+</html>
