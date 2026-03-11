@@ -1,30 +1,14 @@
-{% extends "base.html" %}
+{% extends "Site_web/base.html" %}
 {% load cms_tags %}
 
 {% block content %}
-    <div class="container py-4">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="/">Accueil</a></li>
-                <li class="breadcrumb-item active" aria-current="page">{% page_attribute "page_title" %}</li>
-            </ol>
-        </nav>
-        
-        <div class="row">
-            <div class="col-lg-8">
-                <h1 class="mb-4">{% page_attribute "page_title" %}</h1>
-                {% placeholder "content" %}
-            </div>
-            <div class="col-lg-4">
-                <div class="card">
-                    <div class="card-header bg-primary text-white">
-                        <h5 class="card-title mb-0">Informations</h5>
-                    </div>
-                    <div class="card-body">
-                        {% placeholder "sidebar" %}
-                    </div>
-                </div>
-            </div>
+    <div class="row">
+        <div class="col-lg-8">
+            <h1>{% page_attribute "page_title" %}</h1>
+            {% placeholder "content" %}
+        </div>
+        <div class="col-lg-4">
+            {% placeholder "sidebar" %}
         </div>
     </div>
 {% endblock %}

@@ -1,0 +1,20 @@
+{% load cms_tags %}
+
+<div class="testimonials-section">
+    {% if title %}<h3>{{ title }}</h3>{% endif %}
+    <div class="row">
+        {% for testimonial in testimonials %}
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                {% if testimonial.image %}
+                <img src="{{ testimonial.image.url }}" class="card-img-top rounded-circle mx-auto mt-3" style="width: 100px; height: 100px; object-fit: cover;">
+                {% endif %}
+                <div class="card-body">
+                    <p class="card-text">"{{ testimonial.content }}"</p>
+                    <footer class="blockquote-footer">{{ testimonial.name }}{% if testimonial.role %} <cite>{{ testimonial.role }}</cite>{% endif %}</footer>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>

@@ -2,36 +2,117 @@
 __pycache__/
 *.py[cod]
 *$py.class
-venv/
-env/
 *.so
 .Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+pythonenv*
 
 # Django
 *.log
 local_settings.py
 db.sqlite3
+db.sqlite3-journal
 media/
 static/
+staticfiles/
 *.pot
 *.pyc
+__pycache__/
 
-# Environment
+# Environment variables
 .env
-.venv
-env.bak/
-venv.bak/
+.env.local
+.env.*.local
+
+# Database credentials
+*.sql
+*.sqlite3
 
 # IDE
 .vscode/
 .idea/
 *.swp
 *.swo
-
-# OS
+*~
 .DS_Store
-Thumbs.db
+.project
+.pydevproject
+.settings/
 
 # Project specific
-*.sock
+meftp_web_db
 *.pid
+*.sock
+
+# Virtual environment
+venv/
+ENV/
+
+# Media files (user uploads)
+/media/
+/mediafiles/
+
+# Static files (collected)
+/static/
+/staticfiles/
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+.cache
+coverage.xml
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# celery beat schedule
+celerybeat-schedule
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# Backup files
+*.bak
+*.backup
+*.old

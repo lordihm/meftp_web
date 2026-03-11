@@ -1,18 +1,6 @@
-{% extends "base.html" %}
+{% extends "Site_web/base.html" %}
 {% load cms_tags %}
 
 {% block content %}
     {% placeholder "full_width_content" %}
-    
-    <div class="container-fluid px-0">
-        {% placeholder "full_width_hero" %}
-    </div>
-    
-    <div class="container my-5">
-        <div class="row">
-            <div class="col-12">
-                {% placeholder "content_after_hero" %}
-            </div>
-        </div>
-    </div>
 {% endblock %}

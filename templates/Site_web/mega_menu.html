@@ -1,0 +1,72 @@
+{% load menu_tags %}
+
+{% for child in children %}
+    {% if child.children %}
+        {% if child.attr.mega_menu %}
+            <li class="nav-item dropdown mega-menu">
+                <a class="nav-link dropdown-toggle" href="#" 
+                   data-bs-toggle="dropdown" 
+                   data-bs-auto-close="outside">
+                    {% if child.attr.icon %}<i class="bi {{ child.attr.icon }} me-1"></i>{% endif %}
+                    {{ child.get_menu_title }}
+                </a>
+                <div class="dropdown-menu mega-menu-content p-4">
+                    <div class="container">
+                        <div class="row g-4">
+                            {% for subchild in child.children %}
+                                <div class="col-md-6 col-lg-{{ child.attr.columns|default:"3" }}">
+                                    <div class="mega-menu-item">
+                                        <a href="{{ subchild.get_absolute_url }}" 
+                                           class="dropdown-item p-2 rounded-3">
+                                            {% if subchild.attr.icon %}
+                                                <i class="bi {{ subchild.attr.icon }} me-2"></i>
+                                            {% endif %}
+                                            <strong>{{ subchild.get_menu_title }}</strong>
+                                        </a>
+                                        {% if subchild.children %}
+                                            <div class="mt-2 ps-4">
+                                                {% for subsubchild in subchild.children %}
+                                                    <a href="{{ subsubchild.get_absolute_url }}" 
+                                                       class="d-block py-1 text-muted text-decoration-none small">
+                                                        {{ subsubchild.get_menu_title }}
+                                                    </a>
+                                                {% endfor %}
+                                            </div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </li>
+        {% else %}
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" 
+                   data-bs-toggle="dropdown">
+                    {% if child.attr.icon %}<i class="bi {{ child.attr.icon }} me-1"></i>{% endif %}
+                    {{ child.get_menu_title }}
+                </a>
+                <ul class="dropdown-menu">
+                    {% for subchild in child.children %}
+                        <li>
+                            <a class="dropdown-item" href="{{ subchild.get_absolute_url }}">
+                                {% if subchild.attr.icon %}
+                                    <i class="bi {{ subchild.attr.icon }} me-2"></i>
+                                {% endif %}
+                                {{ subchild.get_menu_title }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </li>
+        {% endif %}
+    {% else %}
+        <li class="nav-item{% if child.selected %} active{% endif %}">
+            <a class="nav-link" href="{{ child.get_absolute_url }}">
+                {% if child.attr.icon %}<i class="bi {{ child.attr.icon }} me-1"></i>{% endif %}
+                {{ child.get_menu_title }}
+            </a>
+        </li>
+    {% endif %}
+{% endfor %}

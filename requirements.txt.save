@@ -1,0 +1,36 @@
+# Django 4.2 LTS
+Django==4.2.7
+
+# django CMS core
+django-cms==4.1.2
+django-treebeard==4.7
+django-sekizai==4.1.0
+
+# Plugins CMS
+djangocms-text==0.9.3
+djangocms-link==4.0.0           # ✅ Compatible avec CMS 4.1.2
+djangocms-file==3.0.1
+djangocms-picture==4.0.0
+djangocms-video==3.1.0
+djangocms-frontend       # ⬅️ Changé de 2.3.0 à 2.1.0
+djangocms-text-ckeditor        # Pour satisfaire les dépendances
+
+# Fichiers et médias
+django-filer==3.2.0
+easy-thumbnails==2.10
+
+# Formulaire de contact
+django-contact-form==5.1.1
+
+# SEO
+django-meta==2.0.0
+
+# Base de données et utilitaires
+psycopg2-binary==2.9.9
+python-decouple==3.8
+Pillow==10.1.0
+
+# Cache et production
+redis==5.0.1
+django-redis==5.4.0
+gunicorn==21.2.0

@@ -1,63 +1,12 @@
-{% extends "base.html" %}
+{% extends "Site_web/base.html" %}
 {% load cms_tags %}
 
 {% block content %}
-    <!-- Hero Section avec placeholder CMS -->
-    <div class="hero-section">
-        <div class="container">
-            {% placeholder "hero_content" %}
-        </div>
-    </div>
-    
-    <div class="container">
-        <!-- Section principale -->
-        <div class="row mb-5">
+    <div class="container my-5">
+        <div class="row">
             <div class="col-12">
-                {% placeholder "main_content" %}
-            </div>
-        </div>
-        
-        <!-- Grille de fonctionnalités/cartes Bootstrap 5 -->
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-briefcase fs-1 text-primary mb-3"></i>
-                        <h5 class="card-title">{% placeholder "card_1_title" %}</h5>
-                        <p class="card-text">{% placeholder "card_1_content" %}</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-building fs-1 text-primary mb-3"></i>
-                        <h5 class="card-title">{% placeholder "card_2_title" %}</h5>
-                        <p class="card-text">{% placeholder "card_2_content" %}</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card h-100">
-                    <div class="card-body text-center">
-                        <i class="bi bi-people fs-1 text-primary mb-3"></i>
-                        <h5 class="card-title">{% placeholder "card_3_title" %}</h5>
-                        <p class="card-text">{% placeholder "card_3_content" %}</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Section d'actualités avec placeholder -->
-        <div class="row mt-5">
-            <div class="col-12">
-                <h2 class="mb-4">Actualités</h2>
-            </div>
-            <div class="col-md-6">
-                {% placeholder "news_1" %}
-            </div>
-            <div class="col-md-6">
-                {% placeholder "news_2" %}
+                <h1>{% page_attribute "page_title" %}</h1>
+                {% placeholder "content" %}
             </div>
         </div>
     </div>

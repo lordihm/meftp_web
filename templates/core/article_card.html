@@ -1,0 +1,64 @@
+{% load cms_tags thumbnail %}
+
+<div class="article-card-plugin my-4">
+    {% if article %}
+        <div class="card border-0 shadow-lg overflow-hidden">
+            <div class="row g-0">
+                {% if article.image_principale %}
+                    <div class="col-md-5">
+                        <img src="{% thumbnail article.image_principale 600x400 crop %}" 
+                             class="img-fluid h-100 w-100 object-fit-cover" 
+                             alt="{{ article.titre }}"
+                             style="min-height: 300px;">
+                    </div>
+                {% endif %}
+                <div class="col-md-{% if article.image_principale %}7{% else %}12{% endif %}">
+                    <div class="card-body p-4 p-lg-5">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            {% if article.categorie %}
+                                <span class="badge rounded-pill px-3 py-2" 
+                                      style="background-color: {{ article.categorie.couleur }};">
+                                    {{ article.categorie.nom }}
+                                </span>
+                            {% endif %}
+                            <small class="text-muted">
+                                <i class="bi bi-calendar3 me-1"></i>
+                                {{ article.date_publication|date:"d F Y" }}
+                            </small>
+                        </div>
+                        
+                        <h2 class="card-title display-5 fw-bold mb-3">
+                            {{ article.titre }}
+                        </h2>
+                        
+                        {% if article.chapeau %}
+                            <p class="card-text lead mb-4">
+                                {{ article.chapeau }}
+                            </p>
+                        {% endif %}
+                        
+                        <div class="d-flex align-items-center gap-4">
+                            <a href="{{ article.get_absolute_url }}" 
+                               class="btn btn-primary rounded-pill px-4 py-2">
+                                Lire l'article complet
+                                <i class="bi bi-arrow-right ms-2"></i>
+                            </a>
+                            
+                            {% if article.auteur %}
+                                <small class="text-muted">
+                                    <i class="bi bi-person me-1"></i>
+                                    {{ article.auteur }}
+                                </small>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <div class="alert alert-warning">
+            <i class="bi bi-exclamation-triangle me-2"></i>
+            Aucun article à la une n'est disponible pour le moment.
+        </div>
+    {% endif %}
+</div>
