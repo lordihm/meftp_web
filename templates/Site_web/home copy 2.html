@@ -1,10 +1,9 @@
-<!-- templates/Site_web/home.html -->
 {% extends "Site_web/base.html" %}
 {% load cms_tags %}
 
 {% block content %}
     <!-- Hero Carousel - PLEINE LARGEUR -->
-    <div class="container-fluid px-0">  <!-- ← container-fluid pour full width -->
+    <div class="container-fluid px-0">  <!-- ← container-fluid px-0 pour full width -->
         <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
             <!-- Indicateurs -->
             <div class="carousel-indicators">
@@ -84,52 +83,6 @@
 
     <!-- Le reste du contenu (dans un container normal) -->
     <div class="container my-5">
-        <!-- Contenu principal -->
-        <div class="row">
-            <div class="col-12">
-                {% placeholder "main_content" %}
-            </div>
-        </div>
-        
-        <!-- Section Mission/Vision/Valeurs -->
-        <div class="row g-4 my-5">
-            <div class="col-md-4">
-                <div class="card h-100 border-0 shadow-sm">
-                    <div class="card-body text-center">
-                        <i class="bi bi-eye fs-1 text-primary mb-3"></i>
-                        <h4>Notre Vision</h4>
-                        {% placeholder "vision_text" %}
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card h-100 border-0 shadow-sm">
-                    <div class="card-body text-center">
-                        <i class="bi bi-bullseye fs-1 text-primary mb-3"></i>
-                        <h4>Notre Mission</h4>
-                        {% placeholder "mission_text" %}
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card h-100 border-0 shadow-sm">
-                    <div class="card-body text-center">
-                        <i class="bi bi-star fs-1 text-primary mb-3"></i>
-                        <h4>Nos Valeurs</h4>
-                        {% placeholder "values_text" %}
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Articles récents -->
-        <div class="row mt-5">
-            <div class="col-12">
-                <h2 class="mb-4">Actualités récentes</h2>
-            </div>
-            <div class="col-12">
-                {% placeholder "articles_recent" %}
-            </div>
-        </div>
+        <!-- ... votre contenu existant ... -->
     </div>
 {% endblock %}

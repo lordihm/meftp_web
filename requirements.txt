@@ -1,41 +1,38 @@
-asgiref==3.11.1
-charset-normalizer==3.4.5
-cssselect2==0.9.0
-Django==5.0.14
-django-classy-tags==4.1.0
-django-cms==5.0.6
-django-contact-form==5.1.1
-django-entangled==0.7
-django-filer==3.2.0
-django-formtools==2.5.1
-django-menus==1.0
-django-meta==2.0.0
-django-polymorphic==4.11.2
-django-redis==5.4.0
-django-sekizai==4.1.0
+# requirements.txt - Dépendances Python pour le projet ME/FT/P
+# Généré le 12 mars 2026
+
+# Django et CMS core
+Django==4.2.7
+django-cms==4.1.2
 django-treebeard==4.7
-djangocms-admin-style==3.3.1
-djangocms-attributes-field==4.1.2
-djangocms-file==3.0.1
-djangocms-frontend==2.3.0
-djangocms-link==5.1.1
-djangocms-picture==4.0.0
+django-sekizai==4.1.0
+django-menus==1.0.0
+
+# Plugins CMS
 djangocms-text==0.9.3
+djangocms-link==4.0.0
+djangocms-file==3.0.1
+djangocms-picture==4.0.0
 djangocms-video==3.1.0
+djangocms-frontend==2.3.0
+djangocms-admin-style
+
+# Fichiers et médias
+django-filer==3.2.0
 easy-thumbnails==2.10
-gunicorn==21.2.0
-lxml==6.0.2
-nh3==0.3.3
-packaging==26.0
-pillow==12.1.1
+
+# Formulaire de contact
+django-contact-form==5.1.1
+
+# SEO
+django-meta==2.0.0
+
+# Base de données et utilitaires
 psycopg2-binary==2.9.9
 python-decouple==3.8
+Pillow==10.1.0
+
+# Cache et production
 redis==5.0.1
-reportlab==4.4.10
-setuptools==82.0.1
-six==1.17.0
-sqlparse==0.5.5
-svglib==1.5.1
-tinycss2==1.5.1
-typing_extensions==4.15.0
-webencodings==0.5.1
+django-redis==5.4.0
+gunicorn==21.2.0

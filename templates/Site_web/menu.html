@@ -11,7 +11,11 @@
     {% if child.children %}
     <ul class="dropdown-menu">
         {% for subchild in child.children %}
-        <li><a class="dropdown-item" href="{{ subchild.get_absolute_url }}">{{ subchild.get_menu_title }}</a></li>
+        <li>
+            <a class="dropdown-item" href="{{ subchild.get_absolute_url }}">
+                {{ subchild.get_menu_title }}
+            </a>
+        </li>
         {% endfor %}
     </ul>
     {% endif %}
