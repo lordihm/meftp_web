@@ -1,21 +1,16 @@
 {% load menu_tags %}
 
 {% for child in children %}
-<li class="nav-item {% if child.children %}dropdown{% endif %}{% if child.selected %} active{% endif %}">
-    <a class="nav-link {% if child.children %}dropdown-toggle{% endif %}" 
+<li class="nav-item{% if child.children %} dropdown{% endif %}{% if child.selected %} active{% endif %}">
+    <a class="nav-link{% if child.children %} dropdown-toggle{% endif %}" 
        href="{{ child.get_absolute_url }}"
-       {% if child.children %}data-bs-toggle="dropdown"{% endif %}>
+       {% if child.children %}role="button" data-bs-toggle="dropdown"{% endif %}>
         {{ child.get_menu_title }}
     </a>
-    
     {% if child.children %}
     <ul class="dropdown-menu">
         {% for subchild in child.children %}
-        <li>
-            <a class="dropdown-item" href="{{ subchild.get_absolute_url }}">
-                {{ subchild.get_menu_title }}
-            </a>
-        </li>
+        <li><a class="dropdown-item" href="{{ subchild.get_absolute_url }}">{{ subchild.get_menu_title }}</a></li>
         {% endfor %}
     </ul>
     {% endif %}

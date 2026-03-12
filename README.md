@@ -25,7 +25,7 @@ Site web institutionnel développé avec django CMS, offrant une plateforme mode
 
 ## 📸 Captures d'écran
 
-*(À ajouter)*
+![alt text](image.png)
 
 
 ## 🏗️ Structure du projet

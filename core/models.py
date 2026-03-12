@@ -4,7 +4,49 @@ from filer.fields.image import FilerImageField
 from filer.fields.file import FilerFileField
 from django.utils import timezone
 from cms.models import Page
+from django.db import models
+from django.utils import timezone
+from cms.models import Page
 
+# core/models.py
+from django.db import models
+from filer.fields.image import FilerImageField
+from django.utils import timezone
+
+class Logo(models.Model):
+    logo = FilerImageField(verbose_name="Logo", on_delete=models.SET_NULL, null=True, blank=True)
+    
+    # Nom court sur 3 lignes
+    nom_court_L1 = models.CharField(
+        max_length=40, 
+        default="République du Niger",
+        verbose_name="Nom court (Première ligne)",
+    )
+    nom_court_L2 = models.CharField(
+        max_length=40, 
+        default="Ministère de l'Enseignement et de la",
+        verbose_name="Nom court (Deuxième ligne)",
+    )
+    nom_court_L3 = models.CharField(
+        max_length=40, 
+        default="Formation Techniques et Professionnels",
+        verbose_name="Nom court (Troisième ligne)",
+    )
+
+    nom_complet = models.CharField(
+        max_length=200, 
+        default="Ministère de l'Enseignement et de la Formation Techniques et Professionnels",
+        verbose_name="Nom complet"
+    )
+    
+    class Meta:
+        verbose_name = "Logo du site"
+        verbose_name_plural = "Logos du site"
+    
+    def __str__(self):
+        return "Logo du site"
+
+# Le reste (ArticleCategorie, Article) inchangé...
 class ArticleCategorie(models.Model):
     """Catégories pour les articles"""
     nom = models.CharField(max_length=50)

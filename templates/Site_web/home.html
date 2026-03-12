@@ -1,88 +1,16 @@
-<!-- templates/Site_web/home.html -->
 {% extends "Site_web/base.html" %}
 {% load cms_tags %}
 
 {% block content %}
-    <!-- Hero Carousel - PLEINE LARGEUR -->
-    <div class="container-fluid px-0">  <!-- ← container-fluid pour full width -->
-        <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
-            <!-- Indicateurs -->
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
-                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
-                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
-            </div>
-            
-            <!-- Slides -->
-            <div class="carousel-inner">
-                <!-- Slide 1 -->
-                <div class="carousel-item active">
-                    <div class="carousel-content" style="height: 600px;">
-                        <div class="container h-100 d-flex align-items-center">
-                            <div class="row w-100">
-                                <div class="col-lg-8 mx-auto text-center text-white">
-                                    {% placeholder "hero_title_1" or %}
-                                        <h1 class="display-3 fw-bold">Bienvenue au ME/FT/P</h1>
-                                    {% endplaceholder %}
-                                    {% placeholder "hero_subtitle_1" or %}
-                                        <p class="lead">Ministère de l'Enseignement et la Formation Techniques et Professionnels</p>
-                                    {% endplaceholder %}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Slide 2 -->
-                <div class="carousel-item">
-                    <div class="carousel-content" style="height: 600px;">
-                        <div class="container h-100 d-flex align-items-center">
-                            <div class="row w-100">
-                                <div class="col-lg-8 mx-auto text-center text-white">
-                                    {% placeholder "hero_title_2" or %}
-                                        <h1 class="display-3 fw-bold">Formation professionnelle de qualité</h1>
-                                    {% endplaceholder %}
-                                    {% placeholder "hero_subtitle_2" or %}
-                                        <p class="lead">Des filières adaptées aux besoins du marché</p>
-                                    {% endplaceholder %}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Slide 3 -->
-                <div class="carousel-item">
-                    <div class="carousel-content" style="height: 600px;">
-                        <div class="container h-100 d-flex align-items-center">
-                            <div class="row w-100">
-                                <div class="col-lg-8 mx-auto text-center text-white">
-                                    {% placeholder "hero_title_3" or %}
-                                        <h1 class="display-3 fw-bold">Insertion professionnelle</h1>
-                                    {% endplaceholder %}
-                                    {% placeholder "hero_subtitle_3" or %}
-                                        <p class="lead">Accompagner les jeunes vers l'emploi et l'entrepreneuriat</p>
-                                    {% endplaceholder %}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Contrôles -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Précédent</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Suivant</span>
-            </button>
+    <!-- Hero Section simple -->
+    <div class="hero-section bg-primary text-white py-5">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold mb-3">{% placeholder "hero_title" or %}{% endplaceholder %}</h1>
+            <p class="lead mb-0">{% placeholder "hero_subtitle" or %}{% endplaceholder %}</p>
         </div>
     </div>
 
-    <!-- Le reste du contenu (dans un container normal) -->
+    <!-- Contenu principal -->
     <div class="container my-5">
         <!-- Contenu principal -->
         <div class="row">
@@ -102,6 +30,7 @@
                     </div>
                 </div>
             </div>
+            
             <div class="col-md-4">
                 <div class="card h-100 border-0 shadow-sm">
                     <div class="card-body text-center">
@@ -111,6 +40,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="col-md-4">
                 <div class="card h-100 border-0 shadow-sm">
                     <div class="card-body text-center">

@@ -112,6 +112,7 @@ TEMPLATES = [
                 'django.template.context_processors.csrf',
                 'cms.context_processors.cms_settings',
                 'sekizai.context_processors.sekizai',
+                'core.context_processors.logo_du_site',
             ],
         },
     },
@@ -174,8 +175,122 @@ CMS_CACHE_DURATIONS = {
 }
 
 # config/settings.py
+# config/settings.py
 CMS_PLACEHOLDER_CONF = {
-    'hero_content': {  # ← AJOUTEZ CETTE SECTION
+    # Placeholders pour les couleurs
+'''
+    'navbar_bg_start': {
+        'name': 'Couleur de début (navbar)',
+        'plugins': ['TextPlugin'],
+        'limits': {'global': 1},
+        'default_plugins': [
+            {
+                'plugin_type': 'TextPlugin',
+                'values': {
+                    'body': '#F97316',
+                },
+            },
+        ],
+    },
+    'navbar_bg_end': {
+        'name': 'Couleur de fin (navbar)',
+        'plugins': ['TextPlugin'],
+        'limits': {'global': 1},
+        'default_plugins': [
+            {
+                'plugin_type': 'TextPlugin',
+                'values': {
+                    'body': '#FDBA74',
+                },
+            },
+        ],
+    },
+    'navbar_text_color': {
+        'name': 'Couleur du texte (navbar)',
+        'plugins': ['TextPlugin'],
+        'limits': {'global': 1},
+        'default_plugins': [
+            {
+                'plugin_type': 'TextPlugin',
+                'values': {
+                    'body': '#FFFFFF',
+                },
+            },
+        ],
+    },
+    'footer_bg_color': {
+        'name': 'Couleur de fond (footer)',
+        'plugins': ['TextPlugin'],
+        'limits': {'global': 1},
+        'default_plugins': [
+            {
+                'plugin_type': 'TextPlugin',
+                'values': {
+                    'body': '#1E293B',
+                },
+            },
+        ],
+    },
+    'footer_text_color': {
+        'name': 'Couleur du texte (footer)',
+        'plugins': ['TextPlugin'],
+        'limits': {'global': 1},
+        'default_plugins': [
+            {
+                'plugin_type': 'TextPlugin',
+                'values': {
+                    'body': '#FFFFFF',
+                },
+            },
+        ],
+    },
+    'footer_link_color': {
+        'name': 'Couleur des liens (footer)',
+        'plugins': ['TextPlugin'],
+        'limits': {'global': 1},
+        'default_plugins': [
+            {
+                'plugin_type': 'TextPlugin',
+                'values': {
+                    'body': '#F97316',
+                },
+            },
+        ],
+    },
+    '''
+        # Placeholders pour le logo et le nom
+    'logo': {
+        'name': 'Logo du site',
+        'plugins': ['PicturePlugin'],  # Permet d'uploader une image
+        'limits': {'global': 1},
+    },
+    'institution_name': {
+        'name': 'Nom court de l\'institution',
+        'plugins': ['TextPlugin'],
+        'limits': {'global': 1},
+        'default_plugins': [
+            {
+                'plugin_type': 'TextPlugin',
+                'values': {
+                    'body': 'MEFTP',
+                },
+            },
+        ],
+    },
+    'institution_full_name': {
+        'name': 'Nom complet de l\'institution',
+        'plugins': ['TextPlugin'],
+        'limits': {'global': 1},
+        'default_plugins': [
+            {
+                'plugin_type': 'TextPlugin',
+                'values': {
+                    'body': 'Ministère de l\'Enseignement et de la Formation Techniques et Professionnels',
+                },
+            },
+        ],
+    },
+   'hero_content': {  # ← AJOUTEZ CETTE SECTION
         'name': 'Contenu de la bannière',
         'plugins': ['TextPlugin', 'PicturePlugin', 'LinkPlugin'],
         'limits': {'global': 10},  # Limite à 5 blocs

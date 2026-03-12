@@ -1,17 +1,13 @@
-# .gitignore - Fichiers à exclure du dépôt Git
-
 # Python
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
 .Python
-env/
 venv/
 ENV/
 env.bak/
 venv.bak/
-pythonenv*
 
 # Django
 *.log
@@ -23,18 +19,12 @@ static/
 staticfiles/
 *.pot
 *.pyc
-__pycache__/
 
 # Environment variables
 .env
 .env.local
 .env.*.local
-.env.production
-.env.development
-
-# Database credentials
-*.sql
-*.sqlite3
+!.env.example
 
 # IDE
 .vscode/
@@ -43,81 +33,7 @@ __pycache__/
 *.swo
 *~
 .DS_Store
-.project
-.pydevproject
-.settings/
 
 # Project specific
 *.pid
 *.sock
-*.db
-
-# Virtual environment
-venv/
-ENV/
-env/
-
-# Media files (user uploads)
-/media/
-/mediafiles/
-
-# Static files (collected)
-/static/
-/staticfiles/
-
-# Coverage reports
-htmlcov/
-.coverage
-.coverage.*
-.cache
-coverage.xml
-
-# Sphinx documentation
-docs/_build/
-
-# PyBuilder
-target/
-
-# Jupyter Notebook
-.ipynb_checkpoints
-
-# pyenv
-.python-version
-
-# celery beat schedule
-celerybeat-schedule
-
-# SageMath parsed files
-*.sage.py
-
-# Spyder project settings
-.spyderproject
-.spyproject
-
-# Rope project settings
-.ropeproject
-
-# mkdocs documentation
-/site
-
-# mypy
-.mypy_cache/
-.dmypy.json
-dmypy.json
-
-# Pyre type checker
-.pyre/
-
-# Backup files
-*.bak
-*.backup
-*.old
-
-# OS generated files
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
