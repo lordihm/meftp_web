@@ -1,0 +1,52 @@
+# Aller dans le dossier des templates
+cd ~/meftp_web/templates/Site_web/
+
+# Créer le fichier slide_texte_fond.html
+cat > slide_texte_fond.html << 'EOF'
+{% load cms_tags static %}
+
+<div class="slide-fond-container" style="height: {{ instance.hauteur }};">
+    {% if instance.image_fond %}
+    <div class="slide-fond-image" 
+         style="background-image: url('{{ instance.image_fond.url }}');">
+    </div>
+    {% else %}
+    <div class="slide-fond-image bg-gradient">
+    </div>
+    {% endif %}
+    
+    <div class="slide-contenu">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-lg-8 mx-auto text-center text-white">
+                    {% if instance.titre %}
+                    <h1 class="display-3 fw-bold mb-4 animate__animated animate__fadeInUp">
+                        {{ instance.titre }}
+                    </h1>
+                    {% endif %}
+                    
+                    {% if instance.sous_titre %}
+                    <p class="lead mb-4 animate__animated animate__fadeInUp animate__delay-1s">
+                        {{ instance.sous_titre }}
+                    </p>
+                    {% endif %}
+                    
+                    {% if instance.texte %}
+                    <div class="slide-texte mb-4 animate__animated animate__fadeInUp animate__delay-2s">
+                        {{ instance.texte|safe }}
+                    </div>
+                    {% endif %}
+                    
+                    {% if instance.bouton_texte and instance.bouton_lien %}
+                    <a href="{{ instance.bouton_lien }}" 
+                       class="btn btn-primary btn-lg px-5 py-3 mt-3 animate__animated animate__fadeInUp animate__delay-3s">
+                        {{ instance.bouton_texte }}
+                        <i class="bi bi-arrow-right ms-2"></i>
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+EOF

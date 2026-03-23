@@ -8,11 +8,7 @@ from django.db import models
 from django.utils import timezone
 from cms.models import Page
 
-# core/models.py
-from django.db import models
-from filer.fields.image import FilerImageField
-from django.utils import timezone
-
+#======= LOGO ET NOMS DU SITE =======#
 class Logo(models.Model):
     logo = FilerImageField(verbose_name="Logo", on_delete=models.SET_NULL, null=True, blank=True)
     
@@ -46,7 +42,7 @@ class Logo(models.Model):
     def __str__(self):
         return "Logo du site"
 
-# Le reste (ArticleCategorie, Article) inchangé...
+#======= ARTICLES D'ACTUALITÉS =======#
 class ArticleCategorie(models.Model):
     """Catégories pour les articles"""
     nom = models.CharField(max_length=50)
@@ -94,3 +90,52 @@ class Article(models.Model):
     
     def get_absolute_url(self):
         return f"/actualites/{self.slug}/"
+
+#======= CARROUSEL TEXTE AVEC IMAGE =======#
+
+class SlideTexteFondPlugin(CMSPlugin):
+    """Plugin pour un slide avec texte et image de fond"""
+    titre = models.CharField(
+        max_length=200,
+        blank=True,
+        verbose_name="Titre"
+    )
+    sous_titre = models.CharField(
+        max_length=300,
+        blank=True,
+        verbose_name="Sous-titre"
+    )
+    texte = models.TextField(
+        blank=True,
+        verbose_name="Texte (HTML autorisé)"
+    )
+    image_fond = FilerImageField(
+        verbose_name="Image de fond",
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        help_text="Image qui sera affichée en arrière-plan"
+    )
+    bouton_texte = models.CharField(
+        max_length=50,
+        blank=True,
+        verbose_name="Texte du bouton"
+    )
+    bouton_lien = models.CharField(
+        max_length=200,
+        blank=True,
+        verbose_name="Lien du bouton"
+    )
+    hauteur = models.CharField(
+        max_length=20,
+        default="600px",
+        verbose_name="Hauteur du slide",
+        help_text="Ex: 600px, 80vh, 100%"
+    )
+    
+    class Meta:
+        verbose_name = "Slide texte avec fond"
+        verbose_name_plural = "Slides texte avec fond"
+    
+    def __str__(self):
+        return self.titre or "Slide sans titre"
