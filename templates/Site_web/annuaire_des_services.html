@@ -1,0 +1,27 @@
+{% extends "Site_web/base.html" %}
+{% load cms_tags %}
+
+{% block content %}
+<div class="container py-4">
+    <h1>{% page_attribute "page_title" %}</h1>
+    
+    <div class="lead mb-4">
+        {% placeholder "introduction" %}
+    </div>
+    
+    <h2>Cabinet du Ministre</h2>
+    {% placeholder "cabinet" %}
+    
+    <h2>Secrétariat Général</h2>
+    {% placeholder "secretariat" %}
+    
+    <h2>Directions Centrales</h2>
+    {% placeholder "directions_centrales" %}
+    
+    <h2>Directions Régionales</h2>
+    {% placeholder "directions_regionales" %}
+    
+    <h2>Centres de Formation</h2>
+    {% placeholder "centres_formation" %}
+</div>
+{% endblock %}

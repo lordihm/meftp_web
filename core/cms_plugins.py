@@ -4,7 +4,9 @@ from cms.plugin_pool import plugin_pool
 from cms.models.pluginmodel import CMSPlugin
 from django.utils.translation import gettext_lazy as _
 from .models import Article, ArticleCategorie
+from .models import SlideTexteFondPlugin
 
+#======= PLUGINS CMS =======#
 @plugin_pool.register_plugin
 class ArticlesRecentsPlugin(CMSPluginBase):
     model = CMSPlugin
@@ -33,6 +35,37 @@ class ArticlesParCategoriePlugin(CMSPluginBase):
         })
         return context
 
-# ATTENTION : Ne PAS réenregistrer les plugins ici !
-# plugin_pool.register_plugin(ArticlesRecentsPlugin)  <- Supprimez ces lignes si elles existent
-# plugin_pool.register_plugin(ArticlesParCategoriePlugin)  <- Supprimez ces lignes
+#======= CARROUSEL TEXTE AVEC IMAGE DE FOND =======#
+@plugin_pool.register_plugin
+class SlideTexteFondPluginPublisher(CMSPluginBase):
+    model = SlideTexteFondPlugin  # ← Nom corrigé
+    name = _("Slide texte avec fond")
+    render_template = "Site_web/slide_texte_fond.html"
+    cache = False
+    module = "ME/FTP"
+    
+    fieldsets = (
+        ('Texte', {
+            'fields': ('titre', 'sous_titre', 'texte')
+        }),
+        ('Image de fond', {
+            'fields': ('image_fond',),
+            'description': 'Image affichée en arrière-plan (format paysage recommandé)'
+        }),
+        ('Bouton (optionnel)', {
+            'fields': ('bouton_texte', 'bouton_lien'),
+            'classes': ('collapse',)
+        }),
+        ('Dimensions', {
+            'fields': ('hauteur',),
+            'classes': ('collapse',)
+        }),
+    )
+    
+    def render(self, context, instance, placeholder):
+        context.update({
+            'instance': instance,
+            'placeholder': placeholder
+        })
+        return context
+    

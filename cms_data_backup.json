@@ -1,0 +1,749 @@
+✓ Monkey patch appliqué pour ugettext_lazy → gettext_lazy
+✓ Patch urlresolvers appliqué
+[
+{
+  "model": "cms.usersettings",
+  "pk": 1,
+  "fields": {
+    "user": 1,
+    "language": "fr",
+    "clipboard": 1
+  }
+},
+{
+  "model": "cms.page",
+  "pk": 3,
+  "fields": {
+    "path": "0001",
+    "depth": 1,
+    "numchild": 0,
+    "parent": null,
+    "site": 1,
+    "created_by": "meftp_web_user",
+    "changed_by": "meftp_web_user",
+    "creation_date": "2026-03-11T09:33:51.522Z",
+    "changed_date": "2026-03-11T09:33:51.617Z",
+    "reverse_id": null,
+    "navigation_extenders": null,
+    "login_required": false,
+    "is_home": true,
+    "application_urls": null,
+    "application_namespace": null,
+    "is_page_type": false
+  }
+},
+{
+  "model": "cms.pageurl",
+  "pk": 3,
+  "fields": {
+    "slug": "accueil",
+    "path": "",
+    "language": "fr",
+    "page": 3,
+    "managed": true
+  }
+},
+{
+  "model": "cms.placeholder",
+  "pk": 1,
+  "fields": {
+    "slot": "clipboard",
+    "default_width": null,
+    "content_type": 9,
+    "object_id": 1
+  }
+},
+{
+  "model": "cms.placeholder",
+  "pk": 2,
+  "fields": {
+    "slot": "content",
+    "default_width": null,
+    "content_type": 10,
+    "object_id": 3
+  }
+},
+{
+  "model": "cms.placeholder",
+  "pk": 3,
+  "fields": {
+    "slot": "hero_content",
+    "default_width": null,
+    "content_type": 10,
+    "object_id": 3
+  }
+},
+{
+  "model": "cms.placeholder",
+  "pk": 4,
+  "fields": {
+    "slot": "main_content",
+    "default_width": null,
+    "content_type": 10,
+    "object_id": 3
+  }
+},
+{
+  "model": "cms.placeholder",
+  "pk": 5,
+  "fields": {
+    "slot": "mission_text",
+    "default_width": null,
+    "content_type": 10,
+    "object_id": 3
+  }
+},
+{
+  "model": "cms.placeholder",
+  "pk": 6,
+  "fields": {
+    "slot": "vision_text",
+    "default_width": null,
+    "content_type": 10,
+    "object_id": 3
+  }
+},
+{
+  "model": "cms.placeholder",
+  "pk": 7,
+  "fields": {
+    "slot": "values_text",
+    "default_width": null,
+    "content_type": 10,
+    "object_id": 3
+  }
+},
+{
+  "model": "cms.placeholder",
+  "pk": 8,
+  "fields": {
+    "slot": "articles_recent",
+    "default_width": null,
+    "content_type": 10,
+    "object_id": 3
+  }
+},
+{
+  "model": "cms.placeholder",
+  "pk": 9,
+  "fields": {
+    "slot": "hero_title_1",
+    "default_width": null,
+    "content_type": 10,
+    "object_id": 3
+  }
+},
+{
+  "model": "cms.placeholder",
+  "pk": 10,
+  "fields": {
+    "slot": "hero_subtitle_1",
+    "default_width": null,
+    "content_type": 10,
+    "object_id": 3
+  }
+},
+{
+  "model": "cms.placeholder",
+  "pk": 11,
+  "fields": {
+    "slot": "hero_title_2",
+    "default_width": null,
+    "content_type": 10,
+    "object_id": 3
+  }
+},
+{
+  "model": "cms.placeholder",
+  "pk": 12,
+  "fields": {
+    "slot": "hero_subtitle_2",
+    "default_width": null,
+    "content_type": 10,
+    "object_id": 3
+  }
+},
+{
+  "model": "cms.placeholder",
+  "pk": 13,
+  "fields": {
+    "slot": "hero_title_3",
+    "default_width": null,
+    "content_type": 10,
+    "object_id": 3
+  }
+},
+{
+  "model": "cms.placeholder",
+  "pk": 14,
+  "fields": {
+    "slot": "hero_subtitle_3",
+    "default_width": null,
+    "content_type": 10,
+    "object_id": 3
+  }
+},
+{
+  "model": "cms.placeholder",
+  "pk": 15,
+  "fields": {
+    "slot": "navbar_bg_start",
+    "default_width": null,
+    "content_type": 10,
+    "object_id": 3
+  }
+},
+{
+  "model": "cms.placeholder",
+  "pk": 16,
+  "fields": {
+    "slot": "navbar_bg_end",
+    "default_width": null,
+    "content_type": 10,
+    "object_id": 3
+  }
+},
+{
+  "model": "cms.placeholder",
+  "pk": 17,
+  "fields": {
+    "slot": "navbar_text_color",
+    "default_width": null,
+    "content_type": 10,
+    "object_id": 3
+  }
+},
+{
+  "model": "cms.placeholder",
+  "pk": 18,
+  "fields": {
+    "slot": "footer_bg_color",
+    "default_width": null,
+    "content_type": 10,
+    "object_id": 3
+  }
+},
+{
+  "model": "cms.placeholder",
+  "pk": 19,
+  "fields": {
+    "slot": "footer_text_color",
+    "default_width": null,
+    "content_type": 10,
+    "object_id": 3
+  }
+},
+{
+  "model": "cms.placeholder",
+  "pk": 20,
+  "fields": {
+    "slot": "footer_link_color",
+    "default_width": null,
+    "content_type": 10,
+    "object_id": 3
+  }
+},
+{
+  "model": "cms.placeholder",
+  "pk": 21,
+  "fields": {
+    "slot": "primary_color",
+    "default_width": null,
+    "content_type": 10,
+    "object_id": 3
+  }
+},
+{
+  "model": "cms.placeholder",
+  "pk": 22,
+  "fields": {
+    "slot": "secondary_color",
+    "default_width": null,
+    "content_type": 10,
+    "object_id": 3
+  }
+},
+{
+  "model": "cms.placeholder",
+  "pk": 23,
+  "fields": {
+    "slot": "accent_color",
+    "default_width": null,
+    "content_type": 10,
+    "object_id": 3
+  }
+},
+{
+  "model": "cms.placeholder",
+  "pk": 24,
+  "fields": {
+    "slot": "hero_title",
+    "default_width": null,
+    "content_type": 10,
+    "object_id": 3
+  }
+},
+{
+  "model": "cms.placeholder",
+  "pk": 25,
+  "fields": {
+    "slot": "hero_subtitle",
+    "default_width": null,
+    "content_type": 10,
+    "object_id": 3
+  }
+},
+{
+  "model": "cms.placeholder",
+  "pk": 26,
+  "fields": {
+    "slot": "institution_name",
+    "default_width": null,
+    "content_type": 10,
+    "object_id": 3
+  }
+},
+{
+  "model": "cms.placeholder",
+  "pk": 27,
+  "fields": {
+    "slot": "logo",
+    "default_width": null,
+    "content_type": 10,
+    "object_id": 3
+  }
+},
+{
+  "model": "cms.placeholder",
+  "pk": 28,
+  "fields": {
+    "slot": "institution_full_name",
+    "default_width": null,
+    "content_type": 10,
+    "object_id": 3
+  }
+},
+{
+  "model": "cms.placeholder",
+  "pk": 29,
+  "fields": {
+    "slot": "hero_bg_start",
+    "default_width": null,
+    "content_type": 10,
+    "object_id": 3
+  }
+},
+{
+  "model": "cms.placeholder",
+  "pk": 30,
+  "fields": {
+    "slot": "hero_bg_end",
+    "default_width": null,
+    "content_type": 10,
+    "object_id": 3
+  }
+},
+{
+  "model": "cms.placeholder",
+  "pk": 31,
+  "fields": {
+    "slot": "hero_text_color",
+    "default_width": null,
+    "content_type": 10,
+    "object_id": 3
+  }
+},
+{
+  "model": "cms.placeholder",
+  "pk": 32,
+  "fields": {
+    "slot": "carousel_texte_images",
+    "default_width": null,
+    "content_type": 10,
+    "object_id": 3
+  }
+},
+{
+  "model": "cms.placeholder",
+  "pk": 33,
+  "fields": {
+    "slot": "slide_texte_fond",
+    "default_width": null,
+    "content_type": 10,
+    "object_id": 3
+  }
+},
+{
+  "model": "cms.cmsplugin",
+  "pk": 1,
+  "fields": {
+    "placeholder": 6,
+    "parent": null,
+    "position": 3,
+    "language": "fr",
+    "plugin_type": "TextPlugin",
+    "creation_date": "2026-03-11T11:20:54.847Z",
+    "changed_date": "2026-03-11T11:20:54.849Z"
+  }
+},
+{
+  "model": "cms.cmsplugin",
+  "pk": 2,
+  "fields": {
+    "placeholder": 5,
+    "parent": null,
+    "position": 3,
+    "language": "fr",
+    "plugin_type": "TextPlugin",
+    "creation_date": "2026-03-11T11:21:03.302Z",
+    "changed_date": "2026-03-11T11:21:03.305Z"
+  }
+},
+{
+  "model": "cms.cmsplugin",
+  "pk": 3,
+  "fields": {
+    "placeholder": 7,
+    "parent": null,
+    "position": 3,
+    "language": "fr",
+    "plugin_type": "TextPlugin",
+    "creation_date": "2026-03-11T11:21:11.290Z",
+    "changed_date": "2026-03-11T11:21:11.292Z"
+  }
+},
+{
+  "model": "cms.cmsplugin",
+  "pk": 4,
+  "fields": {
+    "placeholder": 6,
+    "parent": null,
+    "position": 2,
+    "language": "fr",
+    "plugin_type": "TextPlugin",
+    "creation_date": "2026-03-11T11:29:05.188Z",
+    "changed_date": "2026-03-11T11:29:05.220Z"
+  }
+},
+{
+  "model": "cms.cmsplugin",
+  "pk": 5,
+  "fields": {
+    "placeholder": 6,
+    "parent": null,
+    "position": 1,
+    "language": "fr",
+    "plugin_type": "TextPlugin",
+    "creation_date": "2026-03-11T11:29:37.374Z",
+    "changed_date": "2026-03-11T11:29:37.395Z"
+  }
+},
+{
+  "model": "cms.cmsplugin",
+  "pk": 7,
+  "fields": {
+    "placeholder": 7,
+    "parent": null,
+    "position": 1,
+    "language": "fr",
+    "plugin_type": "TextPlugin",
+    "creation_date": "2026-03-11T11:35:01.766Z",
+    "changed_date": "2026-03-11T11:48:50.827Z"
+  }
+},
+{
+  "model": "cms.cmsplugin",
+  "pk": 8,
+  "fields": {
+    "placeholder": 5,
+    "parent": null,
+    "position": 1,
+    "language": "fr",
+    "plugin_type": "TextPlugin",
+    "creation_date": "2026-03-11T11:35:23.168Z",
+    "changed_date": "2026-03-12T13:20:57.350Z"
+  }
+},
+{
+  "model": "cms.cmsplugin",
+  "pk": 9,
+  "fields": {
+    "placeholder": 5,
+    "parent": null,
+    "position": 2,
+    "language": "fr",
+    "plugin_type": "TextPlugin",
+    "creation_date": "2026-03-11T12:06:02.320Z",
+    "changed_date": "2026-03-11T12:06:02.343Z"
+  }
+},
+{
+  "model": "cms.cmsplugin",
+  "pk": 19,
+  "fields": {
+    "placeholder": 8,
+    "parent": null,
+    "position": 1,
+    "language": "fr",
+    "plugin_type": "ArticlesRecentsPlugin",
+    "creation_date": "2026-03-11T16:43:28.814Z",
+    "changed_date": "2026-03-11T16:43:28.819Z"
+  }
+},
+{
+  "model": "cms.cmsplugin",
+  "pk": 20,
+  "fields": {
+    "placeholder": 15,
+    "parent": null,
+    "position": 1,
+    "language": "fr",
+    "plugin_type": "TextPlugin",
+    "creation_date": "2026-03-12T11:21:16.637Z",
+    "changed_date": "2026-03-12T11:21:16.692Z"
+  }
+},
+{
+  "model": "cms.cmsplugin",
+  "pk": 21,
+  "fields": {
+    "placeholder": 16,
+    "parent": null,
+    "position": 1,
+    "language": "fr",
+    "plugin_type": "TextPlugin",
+    "creation_date": "2026-03-12T11:21:17.068Z",
+    "changed_date": "2026-03-12T12:12:08.230Z"
+  }
+},
+{
+  "model": "cms.cmsplugin",
+  "pk": 22,
+  "fields": {
+    "placeholder": 17,
+    "parent": null,
+    "position": 1,
+    "language": "fr",
+    "plugin_type": "TextPlugin",
+    "creation_date": "2026-03-12T11:21:17.093Z",
+    "changed_date": "2026-03-12T11:21:17.095Z"
+  }
+},
+{
+  "model": "cms.cmsplugin",
+  "pk": 23,
+  "fields": {
+    "placeholder": 18,
+    "parent": null,
+    "position": 1,
+    "language": "fr",
+    "plugin_type": "TextPlugin",
+    "creation_date": "2026-03-12T11:21:17.118Z",
+    "changed_date": "2026-03-12T12:09:18.875Z"
+  }
+},
+{
+  "model": "cms.cmsplugin",
+  "pk": 24,
+  "fields": {
+    "placeholder": 19,
+    "parent": null,
+    "position": 1,
+    "language": "fr",
+    "plugin_type": "TextPlugin",
+    "creation_date": "2026-03-12T11:21:17.168Z",
+    "changed_date": "2026-03-12T11:21:17.170Z"
+  }
+},
+{
+  "model": "cms.cmsplugin",
+  "pk": 25,
+  "fields": {
+    "placeholder": 20,
+    "parent": null,
+    "position": 1,
+    "language": "fr",
+    "plugin_type": "TextPlugin",
+    "creation_date": "2026-03-12T11:21:17.194Z",
+    "changed_date": "2026-03-12T11:21:17.197Z"
+  }
+},
+{
+  "model": "cms.cmsplugin",
+  "pk": 26,
+  "fields": {
+    "placeholder": 24,
+    "parent": null,
+    "position": 1,
+    "language": "fr",
+    "plugin_type": "CarouselPlugin",
+    "creation_date": "2026-03-12T13:14:15.604Z",
+    "changed_date": "2026-03-12T16:30:31.401Z"
+  }
+},
+{
+  "model": "cms.cmsplugin",
+  "pk": 27,
+  "fields": {
+    "placeholder": 24,
+    "parent": 26,
+    "position": 2,
+    "language": "fr",
+    "plugin_type": "CarouselSlidePlugin",
+    "creation_date": "2026-03-12T13:14:35.960Z",
+    "changed_date": "2026-03-12T13:14:35.970Z"
+  }
+},
+{
+  "model": "cms.cmsplugin",
+  "pk": 28,
+  "fields": {
+    "placeholder": 24,
+    "parent": 26,
+    "position": 3,
+    "language": "fr",
+    "plugin_type": "CarouselSlidePlugin",
+    "creation_date": "2026-03-12T13:15:03.836Z",
+    "changed_date": "2026-03-12T13:15:03.841Z"
+  }
+},
+{
+  "model": "cms.cmsplugin",
+  "pk": 29,
+  "fields": {
+    "placeholder": 24,
+    "parent": 26,
+    "position": 4,
+    "language": "fr",
+    "plugin_type": "CarouselSlidePlugin",
+    "creation_date": "2026-03-12T13:15:20.322Z",
+    "changed_date": "2026-03-12T13:15:20.331Z"
+  }
+},
+{
+  "model": "cms.cmsplugin",
+  "pk": 30,
+  "fields": {
+    "placeholder": 7,
+    "parent": null,
+    "position": 2,
+    "language": "fr",
+    "plugin_type": "TextPlugin",
+    "creation_date": "2026-03-12T13:21:21.491Z",
+    "changed_date": "2026-03-12T13:21:21.512Z"
+  }
+},
+{
+  "model": "cms.cmsplugin",
+  "pk": 32,
+  "fields": {
+    "placeholder": 26,
+    "parent": null,
+    "position": 1,
+    "language": "fr",
+    "plugin_type": "TextPlugin",
+    "creation_date": "2026-03-12T13:30:45.243Z",
+    "changed_date": "2026-03-12T13:52:21.066Z"
+  }
+},
+{
+  "model": "cms.cmsplugin",
+  "pk": 33,
+  "fields": {
+    "placeholder": 28,
+    "parent": null,
+    "position": 1,
+    "language": "fr",
+    "plugin_type": "TextPlugin",
+    "creation_date": "2026-03-12T13:30:45.375Z",
+    "changed_date": "2026-03-12T13:30:45.378Z"
+  }
+},
+{
+  "model": "cms.cmsplugin",
+  "pk": 34,
+  "fields": {
+    "placeholder": 30,
+    "parent": null,
+    "position": 1,
+    "language": "fr",
+    "plugin_type": "TextPlugin",
+    "creation_date": "2026-03-12T16:58:44.552Z",
+    "changed_date": "2026-03-12T16:58:44.554Z"
+  }
+},
+{
+  "model": "cms.cmsplugin",
+  "pk": 35,
+  "fields": {
+    "placeholder": 31,
+    "parent": null,
+    "position": 1,
+    "language": "fr",
+    "plugin_type": "TextPlugin",
+    "creation_date": "2026-03-12T16:58:44.574Z",
+    "changed_date": "2026-03-12T16:58:44.576Z"
+  }
+},
+{
+  "model": "cms.cmsplugin",
+  "pk": 36,
+  "fields": {
+    "placeholder": 29,
+    "parent": null,
+    "position": 1,
+    "language": "fr",
+    "plugin_type": "TextPlugin",
+    "creation_date": "2026-03-12T17:02:00.139Z",
+    "changed_date": "2026-03-12T17:02:00.142Z"
+  }
+},
+{
+  "model": "cms.cmsplugin",
+  "pk": 37,
+  "fields": {
+    "placeholder": 32,
+    "parent": null,
+    "position": 1,
+    "language": "fr",
+    "plugin_type": "TextPlugin",
+    "creation_date": "2026-03-18T09:00:48.504Z",
+    "changed_date": "2026-03-18T09:10:55.800Z"
+  }
+},
+{
+  "model": "cms.cmsplugin",
+  "pk": 38,
+  "fields": {
+    "placeholder": 32,
+    "parent": null,
+    "position": 2,
+    "language": "fr",
+    "plugin_type": "TextPlugin",
+    "creation_date": "2026-03-18T09:09:05.512Z",
+    "changed_date": "2026-03-18T09:09:23.998Z"
+  }
+},
+{
+  "model": "cms.pagecontent",
+  "pk": 3,
+  "fields": {
+    "language": "fr",
+    "title": "Accueil",
+    "page_title": "MEFTP - Accueil",
+    "menu_title": "Accueil",
+    "meta_description": "Site officiel du Ministère de l'Enseignement et la Formation Techniques et Professionnels du Niger",
+    "redirect": "",
+    "page": 3,
+    "creation_date": "2026-03-11T09:33:51.534Z",
+    "created_by": "meftp_web_user",
+    "changed_by": "meftp_web_user",
+    "changed_date": "2026-03-12T07:08:31.046Z",
+    "in_navigation": true,
+    "soft_root": false,
+    "template": "INHERIT",
+    "limit_visibility_in_menu": null,
+    "xframe_options": 0
+  }
+}
+]

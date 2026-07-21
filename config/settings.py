@@ -28,9 +28,22 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Sécurité
 SECRET_KEY = config('SECRET_KEY', default='django-insecure-change-me')
 DEBUG = config('DEBUG', default=True, cast=bool)
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='localhost,127.0.0.1').split(',')
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='localhost:8000,127.0.0.1:8000').split(',')
+# config/settings.py
+CSRF_TRUSTED_ORIGINS = [
+    'http://localhost:8000',
+    'http://127.0.0.1:8000',
+]
 
-# Application definition
+# Si vous utilisez HTTPS en production
+# CSRF_COOKIE_SECURE = True
+# SESSION_COOKIE_SECURE = True
+# config/settings.py
+
+# ============================================================================
+# APPLICATION DEFINITION
+# ============================================================================
+
 INSTALLED_APPS = [
     'djangocms_admin_style',
     'django.contrib.admin',
@@ -148,7 +161,8 @@ SITE_ID = 1
 # Static files
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'static'
-STATICFILES_DIRS = [BASE_DIR / 'static_files']
+STATICFILES_DIRS = [BASE_DIR / 'static_files',]
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
@@ -159,14 +173,19 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # ============================================================================
 
 CMS_CONFIRM_VERSION4 = True
+# Avant (trop restrictif) X_FRAME_OPTIONS = 'DENY'
+# Après (autorisé pour la toolbar)
+X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 CMS_TEMPLATES = [
     ('Site_web/home.html', "Page d'accueil"),
     ('Site_web/page.html', "Page standard"),
     ('Site_web/fullwidth.html', "Pleine largeur"),
+    ('Site_web/annuaire_des_services.html', "Annuaire des services"), 
 ]
 
-CMS_PERMISSION = True
+CMS_TOOLBAR_ENABLED = True # Affiche la barre d'outils pour les utilisateurs connectés
+CMS_PERMISSION = True # Active la gestion des permissions pour les pages
 
 CMS_CACHE_DURATIONS = {
     'menus': 0,  # Désactivé pour éviter les problèmes de cache
@@ -174,123 +193,23 @@ CMS_CACHE_DURATIONS = {
     'permissions': 60 * 60,
 }
 
-# config/settings.py
-# config/settings.py
 CMS_PLACEHOLDER_CONF = {
-    # Placeholders pour les couleurs
-'''
-    'navbar_bg_start': {
-        'name': 'Couleur de début (navbar)',
-        'plugins': ['TextPlugin'],
+    #======= PLACEHOLDERS POUR LES COULEURS =======#
+    'primary_color': {
+        'name': 'Couleur primaire',
+        'plugins': ['TextPlugin'],  # Permet d'ajouter du texte pour la couleur (ex: #F97316)
         'limits': {'global': 1},
         'default_plugins': [
             {
                 'plugin_type': 'TextPlugin',
                 'values': {
-                    'body': '#F97316',
+                    'body': '#F97316',  # Couleur orange par défaut
                 },
             },
         ],
     },
-    'navbar_bg_end': {
-        'name': 'Couleur de fin (navbar)',
-        'plugins': ['TextPlugin'],
-        'limits': {'global': 1},
-        'default_plugins': [
-            {
-                'plugin_type': 'TextPlugin',
-                'values': {
-                    'body': '#FDBA74',
-                },
-            },
-        ],
-    },
-    'navbar_text_color': {
-        'name': 'Couleur du texte (navbar)',
-        'plugins': ['TextPlugin'],
-        'limits': {'global': 1},
-        'default_plugins': [
-            {
-                'plugin_type': 'TextPlugin',
-                'values': {
-                    'body': '#FFFFFF',
-                },
-            },
-        ],
-    },
-    'footer_bg_color': {
-        'name': 'Couleur de fond (footer)',
-        'plugins': ['TextPlugin'],
-        'limits': {'global': 1},
-        'default_plugins': [
-            {
-                'plugin_type': 'TextPlugin',
-                'values': {
-                    'body': '#1E293B',
-                },
-            },
-        ],
-    },
-    'footer_text_color': {
-        'name': 'Couleur du texte (footer)',
-        'plugins': ['TextPlugin'],
-        'limits': {'global': 1},
-        'default_plugins': [
-            {
-                'plugin_type': 'TextPlugin',
-                'values': {
-                    'body': '#FFFFFF',
-                },
-            },
-        ],
-    },
-    'footer_link_color': {
-        'name': 'Couleur des liens (footer)',
-        'plugins': ['TextPlugin'],
-        'limits': {'global': 1},
-        'default_plugins': [
-            {
-                'plugin_type': 'TextPlugin',
-                'values': {
-                    'body': '#F97316',
-                },
-            },
-        ],
-    },
-    '''
-        # Placeholders pour le logo et le nom
-    'logo': {
-        'name': 'Logo du site',
-        'plugins': ['PicturePlugin'],  # Permet d'uploader une image
-        'limits': {'global': 1},
-    },
-    'institution_name': {
-        'name': 'Nom court de l\'institution',
-        'plugins': ['TextPlugin'],
-        'limits': {'global': 1},
-        'default_plugins': [
-            {
-                'plugin_type': 'TextPlugin',
-                'values': {
-                    'body': 'MEFTP',
-                },
-            },
-        ],
-    },
-    'institution_full_name': {
-        'name': 'Nom complet de l\'institution',
-        'plugins': ['TextPlugin'],
-        'limits': {'global': 1},
-        'default_plugins': [
-            {
-                'plugin_type': 'TextPlugin',
-                'values': {
-                    'body': 'Ministère de l\'Enseignement et de la Formation Techniques et Professionnels',
-                },
-            },
-        ],
-    },
-   'hero_content': {  # ← AJOUTEZ CETTE SECTION
+    #======= PLACEHOLDERS POUR LE HERO CONTENU =======#
+   'hero_content': {  
         'name': 'Contenu de la bannière',
         'plugins': ['TextPlugin', 'PicturePlugin', 'LinkPlugin'],
         'limits': {'global': 10},  # Limite à 5 blocs
@@ -308,17 +227,54 @@ CMS_PLACEHOLDER_CONF = {
     'vision_text': {
         'name': 'Texte de la vision',
         'plugins': ['TextPlugin'],
-        'limits': {'global': 3},
+        'limits': {'global': 5},
     },
     'mission_text': {
         'name': 'Texte de la mission',
         'plugins': ['TextPlugin'],
-        'limits': {'global': 3},
+        'limits': {'global': 5},
     },
     'values_text': {
         'name': 'Texte des valeurs',
         'plugins': ['TextPlugin'],
+        'limits': {'global': 5},
+    },
+    #======= PLACEHOLDERS POUR LES SLIDES =======#
+    'slide_texte_fond': {
+        'name': 'Slide texte avec fond',
+        'plugins': ['SlideTexteFondPluginPublisher'],
+        'limits': {'global': 10},  # Un seul slide
+    },
+    #======= PLACEHOLDERS POUR LES SERVICES =======#
+    'introduction': {
+        'name': 'Texte d\'introduction',
+        'plugins': ['TextPlugin'],
         'limits': {'global': 3},
+    },
+    'cabinet': {
+        'name': 'Cabinet du Ministre',
+        'plugins': ['TextPlugin'],
+        'limits': {'global': None},
+    },
+    'secretariat': {
+        'name': 'Secrétariat Général',
+        'plugins': ['TextPlugin'],
+        'limits': {'global': 3},
+    },
+    'directions_centrales': {
+        'name': 'Directions Centrales',
+        'plugins': ['TextPlugin'],
+        'limits': {'global': None},  # Pas de limite pour les directions centrales
+    },
+    'directions_regionales': {
+        'name': 'Directions Régionales',
+        'plugins': ['TextPlugin'],
+        'limits': {'global': None},  # Pas de limite pour les directions régionales
+    },
+    'centres_formation': {
+        'name': 'Centres de Formation',
+        'plugins': ['TextPlugin'],
+        'limits': {'global': None},  # Pas de limite pour les centres de formation
     },
 }
 

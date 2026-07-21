@@ -5,6 +5,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{% static 'Site_web/images/favicon.png' %}">
     <title>{% block title %}{% page_attribute "page_title" %} - {{ logo_site.nom_court_L1|default:"MEFTP" }}{% endblock %}</title>
     
     <!-- Bootstrap CSS -->
@@ -28,21 +30,21 @@
                     <img src="{{ logo_site.logo.url }}" 
                          alt="{{ logo_site.nom_court_L1|default:'MEFTP' }}" 
                          class="me-2" 
-                         style="max-height: 45px; width: auto;">
+                         style="max-height: 90px; width: auto;">
                 {% else %}
                     <i class="bi bi-building me-2 fs-3"></i>
                 {% endif %}
                 
-                <!-- Nom court sur 3 lignes -->
+                <!-- Nom court sur 3 lignes avec tailles différentes -->
                 <span style="line-height: 1.3; display: inline-block; text-align: left;">
                     {% if logo_site %}
-                        {{ logo_site.nom_court_L1|default:"République du Niger" }}<br>
-                        {{ logo_site.nom_court_L2|default:"Ministère de l'Enseignement et de la" }}<br>
-                        {{ logo_site.nom_court_L3|default:"Formation Techniques et Professionnels" }}
+                        <span class="ligne1">{{ logo_site.nom_court_L1|default:"République du Niger" }}</span><br>
+                        <span class="ligne2">{{ logo_site.nom_court_L2|default:"Ministère de l'Enseignement et de la" }}</span><br>
+                        <span class="ligne3">{{ logo_site.nom_court_L3|default:"Formation Techniques et Professionnels" }}</span>
                     {% else %}
-                        République du Niger<br>
-                        Ministère de l'Enseignement et de la<br>
-                        Formation Techniques et Professionnels
+                        <span class="ligne1">République du Niger</span><br>
+                        <span class="ligne2">Ministère de l'Enseignement et de la</span><br>
+                        <span class="ligne3">Formation Techniques et Professionnels</span>
                     {% endif %}
                 </span>
             </a>

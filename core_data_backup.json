@@ -1,0 +1,195 @@
+✓ Monkey patch appliqué pour ugettext_lazy → gettext_lazy
+✓ Patch urlresolvers appliqué
+[
+{
+  "model": "core.logo",
+  "pk": 4,
+  "fields": {
+    "logo": 1,
+    "nom_court_L1": "République du Niger",
+    "nom_court_L2": "Ministère de l'Enseignement et de la",
+    "nom_court_L3": "Formation Techniques et Professionnels",
+    "nom_complet": "Ministère de l'Enseignement et de la Formation Techniques et Professionnels"
+  }
+},
+{
+  "model": "core.articlecategorie",
+  "pk": 1,
+  "fields": {
+    "nom": "Actualités du Ministère",
+    "slug": "actualites-du-ministere",
+    "description": "Événements officiels, communiqués, nominations, activités du ministre.",
+    "couleur": "#F97316"
+  }
+},
+{
+  "model": "core.articlecategorie",
+  "pk": 2,
+  "fields": {
+    "nom": "Examens et Concours",
+    "slug": "examens-et-concours",
+    "description": "Informations sur les sessions d'examens (BEP, CAP, CQP), concours d'entrée dans les CFM, calendriers et résultats",
+    "couleur": "#F97316"
+  }
+},
+{
+  "model": "core.articlecategorie",
+  "pk": 3,
+  "fields": {
+    "nom": "Infrastructures et Équipements",
+    "slug": "infrastructures-et-equipements",
+    "description": "Construction et réhabilitation de centres, dotation en équipements, initiatives infrastructurales",
+    "couleur": "#F97316"
+  }
+},
+{
+  "model": "core.articlecategorie",
+  "pk": 4,
+  "fields": {
+    "nom": "Partenariats et Coopération",
+    "slug": "partenariats-et-cooperation",
+    "description": "Accords avec le secteur privé, ONG, partenaires techniques et financiers",
+    "couleur": "#F97316"
+  }
+},
+{
+  "model": "core.articlecategorie",
+  "pk": 5,
+  "fields": {
+    "nom": "Insertion professionnelle",
+    "slug": "insertion-professionnelle",
+    "description": "Dispositifs d'accompagnement, Fonds d'insertion, stages, témoignages de diplômés.",
+    "couleur": "#F97316"
+  }
+},
+{
+  "model": "core.articlecategorie",
+  "pk": 6,
+  "fields": {
+    "nom": "Réformes et Textes officiels",
+    "slug": "reformes-et-textes-officiels",
+    "description": "Nouvelles lois, décrets, arrêtés, programmes de réforme",
+    "couleur": "#F97316"
+  }
+},
+{
+  "model": "core.articlecategorie",
+  "pk": 7,
+  "fields": {
+    "nom": "Vie des établissements",
+    "slug": "vie-des-etablissements",
+    "description": "Activités dans les CET, CFM, centres de formation à travers les régions",
+    "couleur": "#F97316"
+  }
+},
+{
+  "model": "core.articlecategorie",
+  "pk": 8,
+  "fields": {
+    "nom": "Filières et Métiers",
+    "slug": "filieres-et-metiers",
+    "description": "Présentation des filières de formation, métiers porteurs, innovations pédagogiques.",
+    "couleur": "#F97316"
+  }
+},
+{
+  "model": "core.articlecategorie",
+  "pk": 9,
+  "fields": {
+    "nom": "Appels d'offres et Recrutements",
+    "slug": "appels-doffres-et-recrutements",
+    "description": "Avis d'appels d'offres, recrutements de personnel, appels à candidatures",
+    "couleur": "#F97316"
+  }
+},
+{
+  "model": "core.article",
+  "pk": 1,
+  "fields": {
+    "titre": "Le Ministre Pr. Farmo Moumouni effectue une visite de travail dans la région de Dosso",
+    "slug": "le-ministre-pr-farmo-moumouni-effectue-une-visite",
+    "chapeau": "Du 10 au 11 juillet 2025, le Ministre de l'Enseignement et de la Formation Techniques et Professionnels a sillonné plusieurs établissements de la région pour évaluer les infrastructures et échanger avec les acteurs du secteur.",
+    "contenu": "Le Ministre Pr. Farmo Moumouni, accompagné du Secrétaire général du ministère et du Gouverneur de la région de Dosso, le colonel-major Bana Alhassane, a entamé sa visite par le Centre de Formation Professionnelle et Technique de Dosso. Ce centre, qui accueille 581 élèves répartis dans neuf filières, bénéficie actuellement d'une extension grâce à l'appui du Fonds commun.\r\n\r\nLa délégation s'est ensuite rendue au Centre de Formation aux Métiers (CFM) du 72ème bataillon Agali, qui forme 57 apprenants dont 23 filles, encadrés par 17 formateurs. Au quartier Plateau, le Ministre a visité le CFM de Dosso qui a formé, de 2013 à cette date, près de 2 750 jeunes avec un taux d'insertion professionnelle élevé .\r\n\r\nLe vendredi 11 juillet, la visite s'est poursuivie dans la commune de Birni N'Gaouré, où le Ministre a procédé au lancement des épreuves de physique-chimie au CET de la localité. La tournée s'est achevée à l'Institut Privé des Technologies, de l'Innovation et de la Communication (IPTIC Golkoy).\r\n\r\nÀ l'issue de cette mission, le Ministre a relevé des difficultés structurelles dans certains centres ainsi qu'une disparité dans les équipements, tout en saluant l'engagement du personnel et l'esprit de créativité des apprenants. Il a donné l'assurance que des équipes techniques sont déjà mobilisées pour proposer des solutions durables .",
+    "image_principale": 4,
+    "date_publication": "2026-03-11T16:40:41Z",
+    "lieu": "",
+    "auteur": "",
+    "categorie": 1,
+    "est_publie": true,
+    "est_a_la_une": true,
+    "vue_count": 0
+  }
+},
+{
+  "model": "core.article",
+  "pk": 2,
+  "fields": {
+    "titre": "Lancement national du concours d'entrée dans les Centres de Formation Professionnelle et Technique",
+    "slug": "lancement-national-du-concours-dentree-dans-les-ce",
+    "chapeau": "2 306 candidats affrontent les épreuves écrites pour intégrer les centres de formation à travers le pays .",
+    "contenu": "Le Ministre de l'Enseignement et de la Formation Techniques et Professionnels, Pr. Farmo Moumouni, a procédé au lancement officiel, au titre national, du concours d'entrée dans les centres de formation technique et professionnelle en prélude à la rentrée scolaire 2025-2026. Cette cérémonie s'est déroulée dans la région de Tahoua.\r\n\r\nAu total, 2 306 candidats dont 825 filles ont été autorisés à passer ce concours. Le Ministre a indiqué que toutes les dispositions avaient été prises pour un bon déroulement des épreuves, saluant l'engagement des plus hautes autorités du Niger qui accordent une importance cruciale au secteur de la formation technique et professionnelle .\r\n\r\nEn marge du concours, une série de visites a été effectuée dans plusieurs établissements de la région pour s'enquérir des conditions de travail et de l'état des infrastructures. Ces échanges ont permis d'identifier des défis tels que l'insuffisance d'infrastructures, le manque d'eau et d'électricité dans certains établissements, ou encore le déficit de personnel d'encadrement pédagogique .",
+    "image_principale": 2,
+    "date_publication": "2026-03-11T16:44:30Z",
+    "lieu": "",
+    "auteur": "",
+    "categorie": 2,
+    "est_publie": true,
+    "est_a_la_une": false,
+    "vue_count": 0
+  }
+},
+{
+  "model": "core.article",
+  "pk": 3,
+  "fields": {
+    "titre": "Signature d'un accord de partenariat stratégique entre le Ministère et l'ONG Elbourak Charité",
+    "slug": "signature-dun-accord-de-partenariat-strategique-en",
+    "chapeau": "Un partenariat pour favoriser l'émergence du secteur de l'Enseignement et de la Formation Techniques et Professionnels à travers des projets d'envergure .",
+    "contenu": "Le vendredi 02 janvier 2026, s'est déroulée au Cabinet du Ministre la cérémonie de signature d'un accord de partenariat stratégique entre le Ministère de l'Enseignement et de la Formation Techniques et Professionnels et l'ONG de droit Nigérien, Elbourak Charité, sous l'égide du Ministre Pr. Farmo Moumouni.\r\n\r\nCet accord de partenariat cadre avec la lettre de mission du Ministre et permettra, dans la nouvelle synergie ainsi actée, d'aller à des projets importants pour favoriser l'émergence du secteur renaissant de l'Enseignement et de la Formation Techniques et Professionnels .\r\n\r\nCe partenariat illustre la volonté du ministère de mobiliser tous les acteurs de la société civile autour de l'objectif de formation professionnelle de qualité, conformément aux orientations du Chef de l'État.",
+    "image_principale": 3,
+    "date_publication": "2026-03-11T16:46:15Z",
+    "lieu": "",
+    "auteur": "",
+    "categorie": null,
+    "est_publie": true,
+    "est_a_la_une": true,
+    "vue_count": 0
+  }
+},
+{
+  "model": "core.article",
+  "pk": 4,
+  "fields": {
+    "titre": "Réforme majeure du secteur : vers un enseignement technique cohérent et performant",
+    "slug": "reforme-majeure-du-secteur-vers-un-enseignement-te",
+    "chapeau": "Le Ministère engage une refondation du système d'enseignement technique pour le rendre plus cohérent et mieux articulé avec les besoins du marché .",
+    "contenu": "Dans le cadre de la mission confiée au Ministre par le Président de la République, une réforme majeure du secteur de l'enseignement et de la formation techniques et professionnels est en cours. Les articulations saillantes de cette réforme sont l'amélioration et l'efficacité des programmes, la satisfaction des besoins du marché du travail en mettant l'accent sur la compétitivité et l'auto-emploi, et l'usage optimal des nouvelles technologies .\r\n\r\nLa vision du Ministère est claire : \"Un enseignement et une formation techniques et professionnels au service de l'indépendance, de la souveraineté et de la prospérité du Niger\" .\r\n\r\nCette réforme vise notamment à remembrer le processus éducatif en rendant au Ministère ce qui lui revient légalement, à lever les obstacles entre les différents cycles de formation, et à instaurer un cycle supérieur menant au Brevet de Technicien Supérieur (BTS) et au diplôme d'ingénieur .",
+    "image_principale": 1,
+    "date_publication": "2026-03-11T16:48:07Z",
+    "lieu": "",
+    "auteur": "",
+    "categorie": 6,
+    "est_publie": true,
+    "est_a_la_une": false,
+    "vue_count": 0
+  }
+},
+{
+  "model": "core.article",
+  "pk": 5,
+  "fields": {
+    "titre": "Lancement de l'initiative \"Zéro école aux quatre vents\" au CFM de Dosso",
+    "slug": "lancement-de-linitiative-zero-ecole-aux-quatre-ven",
+    "chapeau": "La ville de Dosso abrite le lancement national d'une initiative visant à sécuriser les écoles par la construction de murs de clôture .",
+    "contenu": "La ville de Dosso a abrité le samedi 22 novembre 2025 une importante cérémonie consacrée au lancement national de l'initiative « Zéro école aux quatre vents », à travers la construction du mur de clôture du Centre de Formation aux Métiers (CFM) de Dosso.\r\n\r\nL'évènement s'est déroulé sous le haut patronage du ministre de l'enseignement et de la formation techniques et professionnels, Pr. Farmo Moumouni, en présence du gouverneur de la région de Dosso, le colonel-major Bana Alhassane, du préfet du département de Dosso, de l'administrateur délégué de la commune urbaine de Dosso, des responsables des forces de défense et de sécurité ainsi que plusieurs cadres centraux et régionaux .\r\n\r\nDans son discours de lancement, le ministre a rappelé que cette initiative s'inscrit dans une série de mesures visant à sécuriser les écoles et à promouvoir un environnement d'apprentissage favorable, conformément aux directives du Chef de l'État.",
+    "image_principale": 2,
+    "date_publication": "2026-03-11T16:49:39Z",
+    "lieu": "",
+    "auteur": "",
+    "categorie": 3,
+    "est_publie": true,
+    "est_a_la_une": false,
+    "vue_count": 0
+  }
+}
+]
